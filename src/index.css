@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme{
+
+  --font-title:"Mountains of Christmas", serif;
+  --font-playpen:"Playpen Sans", cursive;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-image: url(/hero.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
