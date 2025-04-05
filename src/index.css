@@ -5,18 +5,18 @@
   --font-title:"Mountains of Christmas", serif;
   --font-playpen:"Playpen Sans", cursive;
   --color-brownie:#7B4600;
+  --background-image-hero-pattern: url(/hero.png);
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
 
-body {
-  background-image: url(/hero.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100%;
-}
 
+@layer components{
+  .pattern{
+    @apply bg-hero-pattern w-screen h-screen bg-center bg-cover absolute z-0;
+  }
+
+  .wrapper {
+    @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
+  }
+
+}
