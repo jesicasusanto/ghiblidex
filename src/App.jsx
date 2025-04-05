@@ -67,7 +67,7 @@ const App = () => {
                   GhibliDex
                   <img
                     className="absolute top-[-2%] left-[-8%] h-[min(10vw,85px)] w-[min(10vw,79px)]"
-                    src="/leaf.png"
+                    src="leaf.png"
                     alt="leaf"
                   />
                 </h2>
