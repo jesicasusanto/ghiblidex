@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://jesicasusanto.github.io/ghiblidex",
+  "homepage": "https://jesicasusanto.github.io/ghiblidex",
   "scripts": {
     "dev": "vite",
     "predeploy" : "npm run build",
