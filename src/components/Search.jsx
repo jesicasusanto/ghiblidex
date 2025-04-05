@@ -2,7 +2,7 @@ import React from 'react'
 
 const Search = ({ searchTerm, setSearchTerm }) => {
   return (
-    <div className="flex items-center bg-white text-black opacity-80 rounded-3xl border-brownie border-2 font-playpen my-4 px-2 drop-shadow-xl">
+    <div className="flex items-center bg-white text-black opacity-80 rounded-3xl border-brownie border-2 font-playpen my-4 px-2 drop-shadow-xl w-[70vw]">
       <img 
         src="magnifier.svg" 
         alt="search" 
