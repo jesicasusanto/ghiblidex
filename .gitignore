@@ -401,3 +401,6 @@ FodyWeavers.xsd
 
 # Build output
 dist/
+
+# Env local file
+.env.local
