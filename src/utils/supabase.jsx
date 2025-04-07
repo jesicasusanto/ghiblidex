@@ -9,7 +9,6 @@ export { supabase };
 
 export const updateSearchCount = async (searchTerm,movie) => {
     try {
-      // Check if the search term already exists in the database
       console.log("Checking..");
       console.log("search_term", searchTerm);
       const { data, error } = await supabase
@@ -20,7 +19,6 @@ export const updateSearchCount = async (searchTerm,movie) => {
       if (error) throw error;
   
       if (data.length > 0) {
-        // If it exists, update the count (first row should have the correct search term)
         console.log(
           "Data exists"
         )
@@ -30,13 +28,11 @@ export const updateSearchCount = async (searchTerm,movie) => {
           .update({ count: newCount })
           .eq('id', data[0].id);
       } else {
-        // If not, insert a new row with count 1
         console.log("Data doesnt exists")
-        console.log(`Inserting: ${searchTerm} ${movie} ${movie.image}`)
         await supabase
           .from('search_term_count')
           .insert([
-            { search_term: searchTerm, count: 1, title: movie.title, poster_url: movie.image }
+            { search_term: searchTerm, count: 1,movie_id :  movie.id }
           ]);
       }
     } catch (error) {
@@ -46,16 +42,14 @@ export const updateSearchCount = async (searchTerm,movie) => {
 
   export const getTrendingMovies = async () => {
     try {
-      const { data, error } = await supabase
-        .from('search_term_count')
-        .select('title, poster_url, count')
-        .order('count', { ascending: false }) // Order by count in descending order
-        .limit(4); // Limit the results to the top 4 movies
-  
+        const { data, error } = await supabase
+        .from('top_4_movie_search_counts')
+        .select('movie_id, total_count');
+    
       if (error) {
         throw error;
       }
-  
+    
       console.log('Trending Movies:', data);
       return data;
     } catch (error) {
@@ -63,4 +57,5 @@ export const updateSearchCount = async (searchTerm,movie) => {
       return [];
     }
   };
+  
   
